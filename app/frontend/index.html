@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div id="posts">
+
+        </div>
+        <script type="text/javascript">
+            const BASE_URL = 'http://myapp.devopsteam.dev/'
+            const PATH = 'api/values'
+
+            fetch(`${BASE_URL}${PATH}`)
+            .then((body) => body.json())
+            .then((data) => {
+                document.getElementById("posts").innerHTML = JSON.stringify(data)
+            })
+            .catch((error) => console.error('Whoops! Erro:', error.message || error))
+        </script>
+    </body>
+</html>
